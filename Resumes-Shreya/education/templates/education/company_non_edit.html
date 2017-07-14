@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company</title>
+</head>
+<body>
+
+{% extends 'education/base.html' %}
+    {% block content %}
+
+{% for ob in queryset %}
+<div class="row">
+                <div class="col-xs-6 center-block">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h2> <b>Company Details </b></h2>
+                                <div id="company">
+                                    Organization Name : {{ob.name}}  <br/>
+                                    About : {{ob.about}} <br/>
+                                    Website Link : {{ob.website}}  <br/>
+
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Profile</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .space{
+                margin-bottom: 100px;
+         }
+    </style>
+
+
+
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+            </script>
+
+</head>
+<body>
+    {% extends 'education/base.html' %}
+    {% block content %}
+
+    <nav class="navbar navbar-inverse ">
+
+                    <div class="container">
+                        <ul class="nav navbar-nav">
+                                <li><a href="#personal"> Personal Details </a></li>
+                                <li><a href="#education"> Educational Qualifications</a></li>
+                                <li><a href="#experience"> Experience</a></li>
+                                <li><a href="#others"> Others</a></li>
+
+                            </ul>
+
+                    </div>
+
+        </nav>
+
+
+
+        <div class="container">
+
+
+            <form method="POST" class="form.secondary-education-form" action="">{% csrf_token %}
+            <div class="row">
+                <div class="col-xs-6 center-block">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+
+                            <h2> <b>Personal Details </b></h2>
+                                <div id="personal" class="panel-body">
+                                    Name : {{form.name}} {{form.name.errors}} <br/>
+                                    Address : {{form.homeadd}} {{form.homeadd.errors}} <br/>
+                                    Date of Birth : {{form.dob}} {{form.dob.errors}} <br/>
+                                    Contact : {{form.contact}} {{form.contact.errors}} <br/>
+                                    Gender : {{form.gender}} {{form.gender.errors}} <br/>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h2> <b>Educational qualifications</b> </h2>
+                                <div id="education"  class="panel-body">
+                                <h3>Secondary Education</h3><br/>
+                                    Year of Completion : {{form.yoc1}}{{form.yoc1.errors}} <br/>
+                                    Board : {{form.board1}} {{form.board1.errors}} <br/>
+                                    Percentage/CGPA Obtained : {{form.percentage1}} {{form.percentage1.errors}}
+
+                                    <br/>
+                                <h3>Senior Secondary Education</h3><br/>
+                                    Year of Completion :       {{form.yoc2}} {{form.yoc2.errors}} <br/>
+                                    Board :                    {{form.board2}} {{form.board2.errors}} <br/>
+                                    Percentage:                {{form.percentage2}} {{form.percentage2.errors}} <br/>
+
+
+                                <h3>Graduation </h3> <br/>
+                                    Year of Completion :       {{form.yoc3}} {{form.yoc3.errors}} <br/>
+                                    Percentage Obtained :      {{form.percentage3}} {{form.percentage3.errors}} <br/>
+                                    College : {{form.college}} {{form.college.errors}} </br>
+                                    Course (Specialization) :  {{form.course}} {{form.course.errors}} </br>
+
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h2> <b>Experience</b> </h2>
+                                <div id="experience"  class="panel-body">
+                                    <h3>Internship Details</h3><br/>
+                                    Company :            {{form.company_i}} {{form.company_i.errors}} <br/>
+                                    Duration :           {{form.duration}} {{form.duration.errors}} <br/>
+                                    Profile :            {{form.profile_i}} {{form.profile_i.errors}} <br/>
+                                    <h3>Internship Details</h3><br/>
+                                    Company :            {{form.company_i2}} {{form.company_i2.errors}} <br/>
+                                    Duration :           {{form.duration2}} {{form.duration2.errors}} <br/>
+                                    Profile :            {{form.profile_i2}} {{form.profile_i2.errors}}  <br/>                                    <br/>
+                                    <h3>Project Details</h3><br/>
+                                    Title :              {{form.title_p}} {{form.title_p.errors}} <br/>
+                                    Description :        {{form.description_p}} {{form.description_p.errors}} <br/>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h2> <b>Others </b> </h2>
+
+                                <div id="others"  class="panel-body">
+
+                                    Skills :             {{form.skills}} {{form.skills.errors}} <br/>
+                                    Post applying for :  {{form.work}} {{form.work.errors}} <br/>
+                                    Github link :        {{form.git_hub}} {{form.git_hub.errors}} <br/>
+                                    LinkedIn Link :      {{form.linked_in}} {{form.linked_in.errors}} <br/>
+
+                                </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+                <input type="submit" class="save btn btn-default space" value="Next" formaction="unedit/"/>
+                <br><br><br> <br><br><br>
+            </form>
+        </div>
+
+
+    {% endblock %}
+</body>
+
+</html>
+

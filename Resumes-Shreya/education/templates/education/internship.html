@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AllAboutResumes</title>
+</head>
+<body>
+    {% extends 'education/base.html' %}
+    {% block content %}
+
+    <p>User Name : {{ Profile.userName }} </p>
+    <p>Email : {{ Profile.email }}</p>
+
+     <h1>Internship Details</h1>
+    <form method="POST" class="form.internship-details-form">{% csrf_token %}
+        {{ form.as_p }}
+        <!--<p> <label for='yoc1'>Year of Completion:</label></p>-->
+        <!--<button type="submit" class="save btn btn-default">Save</button>-->
+    </form>
+
+{% endblock %}
+</body>
+</html>

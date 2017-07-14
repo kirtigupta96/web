@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Profile</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+            </script>
+
+</head>
+<body>
+    {% extends 'education/base.html' %}
+    {% block content %}
+
+    <nav class="navbar navbar-inverse ">
+
+                    <div class="container">
+                        <ul class="nav navbar-nav">
+                                <li><a href="#company"> Company Details </a></li>
+                                <li><a href="/login_success/company/"> Edit </a></li>
+                                <li><a href="/login_success/search/"> Search </a></li>
+
+                            </ul>
+
+                    </div>
+
+        </nav>
+        <div class="container">
+
+            {% for q in queryset %}
+                <div class="row">
+                <div class="col-xs-6 center-block">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h2> <b>Company Details </b></h2>
+                                <div id="company">
+                                    Organization Name : {{q.name}}  <br/>
+                                    About : {{q.about}}  <br/>
+                                    Website Link : <a href="{{q.website}}">{{q.website}} </a> <br/>
+
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+            {% endfor %}
+        </div>
+
+
+    {% endblock %}
+</body>
+
+</html>
