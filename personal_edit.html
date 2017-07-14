@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AllAboutResumes</title>
+</head>
+<body>
+    {% extends 'education/base.html' %}
+    {% block content %}
+    <p>User Name : {{ Profile.userName }} </p>
+    <p>Email : {{ Profile.email }}</p>
+
+    <h1>Personal details</h1>
+    <form method="POST" class="form.personal-details-form">{% csrf_token %}
+        {{ form.as_p }}
+        <!--<p> <label for='yoc1'>Year of Completion:</label></p>-->
+        <!--<button type="submit" class="save btn btn-default">Save</button>-->
+    </form>
+    <h2>Links</h2>
+    <formset method="POST" class="form.links-formset">{% csrf_token %}
+        {{ formset.as_p }}
+        <!--<p> <label for='yoc1'>Year of Completion:</label></p>-->
+        <!--<button type="submit" class="save btn btn-default">Save</button>-->
+    </formset>
+
+
+{% endblock %}
+</body>
+</html>

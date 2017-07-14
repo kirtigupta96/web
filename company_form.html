@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Profile</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+            </script>
+
+</head>
+<body>
+    {% extends 'education/base.html' %}
+    {% block content %}
+
+    <nav class="navbar navbar-inverse ">
+
+                    <div class="container">
+                        <ul class="nav navbar-nav">
+                                <li><a href="#company"> Company Details </a></li>
+
+                            </ul>
+
+                    </div>
+
+        </nav>
+        <div class="container">
+            <form method="POST" class="form.secondary-education-form">{% csrf_token %}
+            <div class="row">
+                <div class="col-xs-6 center-block">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h2> <b>Company Details </b></h2>
+                                <div id="company">
+                                    Organization Name : {{form.name}} {{form.name.errors}} <br/>
+                                    About : {{form.about}} {{form.about.errors}} <br/>
+                                    Website Link : {{form.website}} {{form.website.errors}} <br/>
+
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+               <input type="submit" class="save btn btn-default" value="Submit" formaction="/company_no_edit/"/>
+            </form>
+        </div>
+
+
+    {% endblock %}
+</body>
+
+</html>
